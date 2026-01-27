@@ -5,9 +5,11 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  // We add the tailwind integration here to style the site
+  output: 'static', // <--- THIS IS THE KEY FIX for the empty site error
+  
+  // We need this for your design to work
   integrations: [tailwind()],
   
-  // We add the Netlify adapter here to deploy the site
+  // We need this for Netlify to work
   adapter: netlify(),
 });
