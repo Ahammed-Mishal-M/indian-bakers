@@ -1,0 +1,60 @@
+---
+---
+
+<section id="home" class="min-h-screen w-full bg-dark overflow-hidden relative flex items-center pt-20 lg:pt-0">
+  
+  <!-- Content Background Image (Simulating the reference style) -->
+  <div class="absolute inset-0 z-0 opacity-40 pointer-events-none">
+    <img 
+      src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2672&auto=format&fit=crop" 
+      alt="Bakery Texture Background" 
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-dark/10"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-6 w-full flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-0 h-full items-center relative z-10 pt-16 lg:pt-0">
+    
+    <!-- Left Column: Typography -->
+    <div class="flex flex-col items-center lg:items-start text-center lg:text-left z-10" data-aos="fade-right">
+      <h1 class="text-5xl md:text-7xl leading-[1.1] mb-4 lg:mb-6 tracking-tight">
+        <span class="font-serif font-bold text-white block">Delicious Food,</span>
+        <span class="font-serif italic font-light text-brand block mt-2">Always tells a Story.</span>
+      </h1>
+      
+      <p class="font-sans text-lg md:text-xl text-white/80 mb-8 lg:mb-10 max-w-md leading-relaxed tracking-wide">
+        Where every slice is a celebration of life.
+      </p>
+
+      <a href="#menu" class="group relative inline-block px-10 py-4 bg-brand text-dark font-sans font-bold uppercase tracking-widest overflow-hidden shadow-lg hover:shadow-brand/50 transition-shadow duration-300">
+        <span class="relative z-10 transition-colors duration-300 group-hover:text-white">View Menu</span>
+        <div class="absolute inset-0 bg-black transform -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0"></div>
+      </a>
+    </div>
+
+    <!-- Right Column: Rotating Visual -->
+    <div class="relative flex justify-center items-center z-10 h-[45vh] lg:h-auto w-full -mt-2 lg:mt-0">
+      <!-- Rotating Image -->
+      <div class="relative w-72 md:w-[500px] lg:w-[600px] aspect-square" data-aos="zoom-in" data-aos-delay="200">
+        <!-- Decorative Background Circle behind cake matching the reference 'plate' feel -->
+        <div class="absolute inset-0 border border-white/10 rounded-full scale-110 animate-[spin_60s_linear_infinite_reverse]"></div>
+        <div class="absolute inset-0 border border-dashed border-brand/20 rounded-full scale-125 animate-[spin_40s_linear_infinite]"></div>
+
+        <img 
+          src="/images/rotating-cake.png" 
+          alt="Indian Bakers Signature Cake" 
+          class="w-full h-full object-contain animate-[spin_30s_linear_infinite]"
+        />
+        <!-- Glow -->
+        <div class="absolute inset-0 bg-brand/5 blur-[80px] -z-10 rounded-full"></div>
+      </div>
+    </div>
+
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50 hidden lg:block">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+</section>

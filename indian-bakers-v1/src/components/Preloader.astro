@@ -1,0 +1,76 @@
+---
+---
+
+<div id="preloader" class="fixed inset-0 z-[100] bg-[#050505] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-900 to-black flex justify-center items-center transition-opacity duration-700">
+    <!-- Center Logo with Spotlight Effect -->
+    <div class="relative z-10">
+        <img 
+            src="/Gemini_Generated_Image_2t7b0n2t7b0n2t7b-removebg-preview.png" 
+            alt="Indian Bakers" 
+            class="w-56 object-contain animate-breathe drop-shadow-2xl"
+            onerror="this.src='/logo.png'"
+        />
+    </div>
+
+    <!-- Minimal Bottom Progress Bar -->
+    <div class="absolute bottom-0 left-0 w-full h-[2px] bg-transparent">
+        <div class="h-full bg-[#E9A127] animate-progress shadow-[0_0_10px_#E9A127]"></div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        
+        // Ensure animation runs for its full duration (1.5s)
+        if (preloader) {
+            setTimeout(() => {
+                preloader.classList.add('opacity-0', 'pointer-events-none');
+                
+                // Cleanup
+                setTimeout(() => {
+                    preloader.remove();
+                }, 700);
+            }, 1500);
+        }
+    });
+
+    // Fallback for faster loads or cached states
+    if (document.readyState === 'complete') {
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => preloader.remove(), 700);
+            }
+        }, 1500);
+    }
+</script>
+
+<style>
+    /* Slow breathe animation */
+    @keyframes breathe {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.7;
+            transform: scale(1.02);
+        }
+    }
+
+    .animate-breathe {
+        animation: breathe 3s ease-in-out infinite;
+    }
+
+    /* Progress bar animation */
+    @keyframes progress {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+
+    .animate-progress {
+        animation: progress 1.5s ease-out forwards;
+    }
+</style>

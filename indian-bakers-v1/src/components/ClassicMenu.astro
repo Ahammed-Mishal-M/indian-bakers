@@ -1,0 +1,96 @@
+---
+import menuData from '../data/menu.json';
+
+const { text_menu_categories } = menuData;
+---
+
+<section id="menu" class="py-24 bg-[#111111] relative border-t border-white/5 overflow-hidden">
+    {/* Background Effects */}
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#1a1a1a] via-[#111111] to-[#0a0a0a] opacity-80"></div>
+    <div class="absolute inset-0 opacity-[0.15]" style="background-image: url('https://www.transparenttextures.com/patterns/black-paper.png'); mix-blend-mode: overlay;"></div>
+    
+    {/* Watermark Logo */}
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
+        <img src="/images/logo-main.png" alt="Watermark" class="w-[90%] md:w-[800px] opacity-[0.03] grayscale invert" />
+    </div>
+
+    {/* Spotlight Glow */}
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-[#E9A127]/5 to-transparent blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-5 lg:px-6 relative z-10 max-w-6xl">
+        <div class="text-center mb-16 lg:mb-20">
+            <span class="font-serif text-[#E9A127] text-lg italic mb-2 block opacity-80">Curated Selection</span>
+            <h2 class="text-4xl md:text-6xl font-serif font-medium text-white mb-6 tracking-tight">
+                The Café Menu
+            </h2>
+            <div class="flex items-center justify-center gap-4 opacity-50">
+                <span class="h-px w-12 bg-gradient-to-r from-transparent to-[#E9A127]"></span>
+                <span class="text-[#E9A127] text-xs uppercase tracking-[0.2em] font-sans">Est. 2012</span>
+                <span class="h-px w-12 bg-gradient-to-l from-transparent to-[#E9A127]"></span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+            {text_menu_categories.map((category) => {
+                const icons = {
+                    "Flame": `<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.1.2-2.2.5-3.3.3.9.7 2 2.5 2.8Z"/>`,
+                    "Sandwich": `<path d="M3 3v18h18"/><path d="M18.4 14.3a9 9 0 0 0-7.7-7.7"/><path d="M13.4 12.6l-3.3-3.3"/><path d="M10.4 15.6l-3.3-3.3"/>`, // Approx burger/sandwich
+                    "Croissant": `<path d="m2.3 15 .2 2c.2 1.7 1.2 3 2.9 3.5l1.6.4c3.4 1 7.2.7 10.5-1l.7-.4c1.6-.7 2.6-2.2 2.6-4v-.2c0-1.4-.9-2.7-2.3-3.2l-2-.7c-3.1-1.1-6.5-1-9.6.3l-1.9.8c-1.3.6-2.2 1.9-2.2 3.3Z"/><path d="m9 11 1-5 2 5"/>`,  // Croissant-ish
+                    "IceCream": `<path d="m7 11 4.4-4.4a2.12 2.12 0 0 1 3 3L10 14a2 2 0 0 1-2.83 0l-.6-.6a2 2 0 0 1 0-2.83Z"/><path d="M10 14a5 5 0 0 0 5 2l2-1-6-4"/><path d="m14 10 2-2 3 3-5 5-2-2"/>`, // Ice cream
+                    "Milk": `<path d="M8 2h8"/><path d="M9 2v2.8A3 3 0 0 0 9 10h6a3 3 0 0 0 0-5.2V2"/><path d="M6 10v9a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-9"/>`, // Milk carton/glass
+                    "Citrus": `<path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="m12 12-4.5 4-2-1.5"/><path d="m12 12 4.5 4 2-1.5"/><path d="m12 12-4.5-4-2 1.5"/><path d="m12 12 4.5-4 2-1.5"/>`,
+                    "GlassWater": `<path d="M15.2 22a2.3 2.3 0 0 0 2.1-1.3l2.4-7c.7-2 .3-4.2-1-5.9l-.6-.8A3 3 0 0 0 15.7 5H8.3a3 3 0 0 0-2.4 2l-.6.8c-1.3 1.7-1.7 3.9-1 5.9l2.4 7A2.3 2.3 0 0 0 8.8 22h6.4Z"/><path d="M6 10h12"/>`,
+                    "Coffee": `<path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 0 1 4 4v2a2 2 0 0 1-2 2h-3"/><path d="M6 2v2"/>`
+                };
+                
+                // Fallback iconic paths if exact matches aren't perfect, kept simple for "Premium" feel
+                const iconSvg = icons[category.icon] || `<circle cx="12" cy="12" r="10"/>`;
+
+                return (
+                <div class="group relative rounded-tx-lg rounded-bl-lg transition-transform duration-500 hover:-translate-y-2" data-aos="fade-up">
+                    {/* Glassmorphic Card */}
+                    <div class="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-xl border border-[#E9A127]/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] group-hover:bg-white/[0.07] transition-all duration-500"></div>
+                    <div class="absolute inset-0 rounded-xl bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none"></div>
+
+                    <div class="relative p-6 md:p-8 text-center h-full flex flex-col items-center">
+                        {/* Category Icon */}
+                        <div class="text-[#E9A127] mb-4 p-3 rounded-full bg-[#E9A127]/10 group-hover:bg-[#E9A127]/20 transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={iconSvg} />
+                        </div>
+
+                        <h3 class="text-xl md:text-2xl font-serif text-[#E9A127] mb-2 tracking-wide font-medium">
+                            {category.category}
+                        </h3>
+                        
+                        <div class="w-12 h-px bg-[#E9A127]/30 mb-6 group-hover:w-20 transition-all duration-500"></div>
+                        
+                        <div class="flex flex-wrap justify-center gap-x-2 gap-y-1.5 leading-relaxed">
+                            {category.items.map((item, index) => (
+                                <>
+                                    <span class="text-gray-300 font-sans text-[0.95rem] tracking-wide group-hover:text-white transition-colors">
+                                        {item}
+                                    </span>
+                                    {index < category.items.length - 1 && (
+                                        <span class="text-[#E9A127]/40 text-xs self-center">•</span>
+                                    )}
+                                </>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )})}
+        </div>
+        
+        <div class="mt-20 md:mt-24 text-center">
+             <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E9A127] opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-[#E9A127]"></span>
+                </span>
+                <a href="tel:+919048151525" class="text-white/60 text-xs md:text-sm hover:text-[#E9A127] transition-colors uppercase tracking-widest font-sans">
+                    Call for Current Pricing & Availability
+                </a>
+             </div>
+        </div>
+    </div>
+</section>

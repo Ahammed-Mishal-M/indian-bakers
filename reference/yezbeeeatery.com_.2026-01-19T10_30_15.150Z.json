@@ -1,0 +1,202 @@
+{
+  "data": {
+    "branding": {
+      "colorScheme": "dark",
+      "fonts": [
+        {
+          "family": "Inter",
+          "count": 45
+        },
+        {
+          "family": "sans-serif",
+          "count": 45
+        },
+        {
+          "family": "Playfair Display",
+          "count": 27
+        },
+        {
+          "family": "serif",
+          "count": 27
+        }
+      ],
+      "colors": {
+        "primary": "#E9A127",
+        "accent": "#888809",
+        "background": "#111111",
+        "textPrimary": "#111111",
+        "link": "#888809"
+      },
+      "typography": {
+        "fontFamilies": {
+          "primary": "Inter",
+          "heading": "Inter"
+        },
+        "fontStacks": {
+          "body": [
+            "Inter",
+            "sans-serif"
+          ],
+          "heading": [
+            "Inter",
+            "sans-serif"
+          ],
+          "paragraph": [
+            "Inter",
+            "sans-serif"
+          ]
+        },
+        "fontSizes": {
+          "h1": "96px",
+          "h2": "96px",
+          "body": "18px"
+        }
+      },
+      "spacing": {
+        "baseUnit": 4,
+        "borderRadius": "15px"
+      },
+      "components": {},
+      "images": {
+        "logo": "https://yezbeeeatery.com/assets/imgs/logos/yez-vertical.webp",
+        "favicon": "https://yezbeeeatery.com/assets/imgs/logos/yez-fav.ico",
+        "ogImage": "assets/imgs/logos/yez-fav.ico"
+      },
+      "__framework_hints": [],
+      "__llm_logo_reasoning": {
+        "selectedIndex": 0,
+        "reasoning": "Strong indicators: in header, header location, visible, highest logo on page, alt matches logo/brand, src contains logo, class contains logo, reasonable size. Score: 95 (clear winner by 55 points)",
+        "confidence": 0.9
+      },
+      "__llm_button_reasoning": {
+        "primary": {
+          "index": -1,
+          "text": "N/A",
+          "reasoning": "LLM failed"
+        },
+        "secondary": {
+          "index": -1,
+          "text": "N/A",
+          "reasoning": "LLM failed"
+        },
+        "confidence": 0
+      },
+      "confidence": {
+        "buttons": 0,
+        "colors": 0,
+        "overall": 0
+      }
+    },
+    "metadata": {
+      "description": "Discover YezBee Eatery, your neighborhood hangout space in Kerala. With over 3 stores and 100+ menu items, we offer a cozy retreat for sweet treats and warm connections.",
+      "twitter:title": "YezBee Eatery | Sip, Snack, & Feel Carefree",
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+      "og:image": "assets/imgs/logos/yez-fav.ico",
+      "ogDescription": "Indulge in life's simple pleasures at YezBee – your cozy retreat for sweet treats and warm connections across Kerala.",
+      "keywords": "YezBee Eatery, Kerala cafe, hangout spot, sweet treats, cozy cafe, Kerala snacks, family-friendly cafe",
+      "ogTitle": "YezBee Eatery | Your Neighborhood Hangout Space",
+      "language": "zxx",
+      "og:type": "website",
+      "twitter:card": "summary_large_image",
+      "ogImage": "assets/imgs/logos/yez-fav.ico",
+      "twitter:image": "assets/imgs/logos/yez-fav.ico",
+      "robots": "index, follow",
+      "ogUrl": "https://yezbeeeatery.com",
+      "og:title": "YezBee Eatery | Your Neighborhood Hangout Space",
+      "og:description": "Indulge in life's simple pleasures at YezBee – your cozy retreat for sweet treats and warm connections across Kerala.",
+      "og:url": "https://yezbeeeatery.com",
+      "twitter:description": "Join us at YezBee Eatery, your neighborhood hangout spot in Kerala, offering over 100 delightful menu items in a cozy atmosphere.",
+      "title": "YezBee Eatery | Sip, Snack, & Feel Carefree | Kerala",
+      "favicon": "https://yezbeeeatery.com/assets/imgs/logos/yez-fav.ico",
+      "scrapeId": "019bd5cd-f2a3-71aa-982d-63813d68a14f",
+      "sourceURL": "https://yezbeeeatery.com/",
+      "url": "https://yezbeeeatery.com/",
+      "statusCode": 200,
+      "contentType": "text/html",
+      "timezone": "America/New_York",
+      "proxyUsed": "basic",
+      "indexId": "46ad86e9-0890-45c9-99a4-475f1db57c5a",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  },
+  "scrape_id": "019bd5cd-f2a3-71aa-982d-63813d68a14f",
+  "id": "soUObgeUWaOb8kR-lkh3U",
+  "startedAt": "2026-01-19T10:30:15.150Z",
+  "endedAt": "2026-01-19T10:30:24.975Z",
+  "endpoint": "scrape",
+  "formState": {
+    "extractSetupCompleted": false,
+    "urls": [],
+    "extractSchema": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "company_mission": {
+          "type": "string"
+        },
+        "supports_sso": {
+          "type": "boolean"
+        },
+        "is_open_source": {
+          "type": "boolean"
+        },
+        "is_in_yc": {
+          "type": "boolean"
+        }
+      }
+    },
+    "extractPrompt": "Extract the company details, following the schema.",
+    "enableWebSearch": false,
+    "constrainUrls": false,
+    "options": {
+      "onlyMainContent": false,
+      "parsePDF": true,
+      "stealthMode": false,
+      "excludeTags": [],
+      "includeTags": [],
+      "waitFor": "",
+      "timeout": "",
+      "maxAge": "2 days",
+      "ignoreSitemap": false,
+      "crawlEntireDomain": false,
+      "sitemap": "include",
+      "limit": "10",
+      "maxDepth": "",
+      "excludePaths": [],
+      "includePaths": [],
+      "includeSubdomains": false,
+      "search": "",
+      "scrapeContentFromSearchResults": true,
+      "timeBasedSearch": "",
+      "location": "",
+      "prompt": ""
+    },
+    "formats": [
+      "branding"
+    ],
+    "sources": [
+      "web"
+    ],
+    "categories": [],
+    "jsonSchema": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "company_name": {
+          "type": "string"
+        },
+        "company_description": {
+          "type": "string"
+        }
+      }
+    },
+    "jsonPrompt": "",
+    "agent": {},
+    "url": "yezbeeeatery.com/",
+    "endpoint": "scrape"
+  },
+  "status": "success",
+  "version": "JKDRDzCw9ARFr_Qmb35pn",
+  "isPreview": false
+}

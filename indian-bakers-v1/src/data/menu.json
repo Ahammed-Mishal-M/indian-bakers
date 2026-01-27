@@ -1,0 +1,149 @@
+{
+  "visual_highlights": {
+    "cakes": {
+      "title": "Signature Cakes",
+      "subtitle": "Order for Special Occasions",
+      "image": "/images/black-forest.png",
+      "items": [
+        "Black Forest", "White Forest", "Red Velvet", "Vancho", "Spanish Delight"
+      ]
+    },
+    "chips": {
+      "title": "Famous Hot Chips",
+      "subtitle": "Freshly Fried Banana Chips",
+      "image": "/images/chips.png",
+      "items": [
+        "Banana Chips (1kg)", "Tapioca Chips", "Jackfruit Chips"
+      ]
+    }
+  },
+  "specials": [
+    { 
+      "name": "Red Vancho", 
+      "image": "/images/red-vancho.png", 
+      "desc": "Exotic Red Velvet & Vancho Fusion" 
+    },
+    { 
+      "name": "Rasgulla Cake", 
+      "image": "/images/rasgulla-cake.png", 
+      "desc": "Traditional Sweet Meets Modern Cake" 
+    },
+    { 
+      "name": "Gulab Jamun Cake", 
+      "image": "/images/gulab-jamun.png", 
+      "desc": "Rich Cake Topped with Gulab Jamun" 
+    },
+    { 
+      "name": "Hazelnut Praline", 
+      "image": "/images/hazelnut.png", 
+      "desc": "Crunchy Hazelnut with Creamy Chocolate" 
+    },
+    { 
+      "name": "Spanish Delight", 
+      "image": "/images/spanish.png", 
+      "desc": "A Classic Delight for Every Occasion" 
+    },
+    { 
+      "name": "Belgian Chocolate", 
+      "image": "/images/belgian.png", 
+      "desc": "Premium Dark Chocolate Ganache" 
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Nihal S N",
+      "text": "One of the best food spot if you are a Malabar snack lover ❤️",
+      "rating": 5
+    },
+    {
+      "name": "Sandeep Girish",
+      "text": "Nice Place to spend and delicious Food.",
+      "rating": 5
+    },
+    {
+      "name": "Davis John",
+      "text": "Good and tasty food, snacks are too good and budget friendly. Variety of seating swinging seats are interesting.",
+      "rating": 5
+    },
+    {
+      "name": "Murali S",
+      "text": "One of the Bakery/Tea/Snacks shops in Alathur. Shop ambience is good. Service and Response is good.",
+      "rating": 4
+    },
+    {
+      "name": "Jayasankar Moolayil",
+      "text": "The banana chips is top quality and crispy. Highly recommended.",
+      "rating": 5
+    },
+    {
+      "name": "Abdul Ahsan M",
+      "text": "Very good cafe for couples & singles. Good service, Nice behavior, Good & lots of variety foods.. Lovely 😍",
+      "rating": 5
+    }
+  ],
+  "text_menu_categories": [
+    {
+      "category": "Arabian & Grills",
+      "icon": "Flame",
+      "items": [
+        "Shawarma Roll", "Shawarma Plate", "Special Shawarma Plate",
+        "Al Faham (Qtr / Half / Full)", "Peri Peri Al Faham (Spicy)", "Plate Shawarma"
+      ]
+    },
+    {
+      "category": "Burgers & Fried Chicken",
+      "icon": "Sandwich",
+      "items": [
+        "Crispy Chicken Burger", "Zinger Burger", "Chicken Sandwich", "Club Sandwich",
+        "Fried Chicken (2 Pcs)", "Fried Chicken Bucket (10 Pcs)", "Meat Loaded Fries", "Chicken Wrap"
+      ]
+    },
+    {
+      "category": "Savoury Snacks",
+      "icon": "Croissant",
+      "items": [
+        "Chicken Puffs", "Egg Puffs", "Veg Puffs", "Chicken Roll",
+        "Chicken Cutlet", "Veg Cutlet", "Butter Bun", "Cream Bun"
+      ]
+    },
+    {
+      "category": "Falooda & Desserts",
+      "icon": "IceCream",
+      "items": [
+        "Royal Falooda", "Arabian Falooda", "Dry Nuts Falooda", "Spanish Falooda",
+        "Tender Coconut Falooda", "Fruit Salad", "Gadbad Ice Cream", "Brownie with Ice Cream"
+      ]
+    },
+    {
+      "category": "Signature Shakes",
+      "icon": "Milk",
+      "items": [
+        "Sharjah Shake", "Avil Milk Special", "Tender Coconut Shake", "Spanish Delight Shake",
+        "Belgium Chocolate Shake", "Lotus Biscoff Shake", "Nutella Shake", "Dry Fruit Shake"
+      ]
+    },
+    {
+      "category": "Mojitos & Coolers",
+      "icon": "Citrus",
+      "items": [
+        "Mint Lime", "Blue Curacao", "Passion Fruit Mojito", "Green Apple Mojito",
+        "Watermelon Mojito", "Ginger Lime", "Kulukki Sarbath"
+      ]
+    },
+    {
+      "category": "Fresh Juices",
+      "icon": "GlassWater",
+      "items": [
+        "Shamamm (Melon)", "Orange", "Pineapple", "Anar (Pomegranate)",
+        "Grape", "Mosambi", "Mixed Fruit Juice"
+      ]
+    },
+    {
+      "category": "Hot Beverages",
+      "icon": "Coffee",
+      "items": [
+        "Tea", "Coffee", "Boost", "Horlicks", "Hot Badam Milk"
+      ]
+    }
+  ]
+}

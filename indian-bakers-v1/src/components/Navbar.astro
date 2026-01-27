@@ -1,0 +1,132 @@
+---
+const links = [
+  { name: "Home", href: "#home", icon: "home" },
+  { name: "Experience", href: "#experience", icon: "sparkles" },
+  { name: "Menu", href: "#menu", icon: "utensils" },
+  { name: "Contact", href: "#contact", icon: "phone" },
+];
+---
+
+<!-- Desktop Logo (Fixed Top Left) -->
+<a href="#" class="hidden md:block fixed top-6 left-6 z-50 group">
+  <div class="relative h-20 w-auto transition-transform duration-300 group-hover:scale-105">
+    <img 
+      src="/logo.png" 
+      alt="Indian Bakers Logo" 
+      class="h-full w-auto object-contain drop-shadow-[0_0_8px_rgba(233,161,39,0.5)]"
+    />
+  </div>
+</a>
+
+<!-- Mobile Navbar (Top Fixed) -->
+<nav id="mobile-nav" class="md:hidden fixed top-0 left-0 w-full z-[60] transition-all duration-300 px-5 py-4 flex items-center justify-center">
+    <!-- Mobile Logo -->
+    <a href="#" class="block">
+        <img src="/logo.png" alt="Indian Bakers Logo" class="h-12 w-auto object-contain drop-shadow-[0_0_8px_rgba(233,161,39,0.5)]" />
+    </a>
+</nav>
+
+<!-- Floating Navbar (Desktop Only) -->
+<nav class="hidden md:flex fixed top-6 inset-x-0 mx-auto max-w-7xl px-6 z-50 justify-center pointer-events-none">
+  <!-- Center Nav Links -->
+  <div class="pointer-events-auto flex items-center gap-2 bg-dark/60 border border-white/10 backdrop-blur-xl py-2 px-2 rounded-full shadow-2xl">
+    
+    {links.map((link) => (
+      <a
+        href={link.href}
+        class="nav-link relative cursor-pointer text-sm font-semibold px-4 md:px-6 py-2.5 rounded-full transition-colors duration-300 text-white/60 hover:text-brand data-[active=true]:text-brand data-[active=true]:bg-white/10"
+        aria-label={link.name}
+      >
+        <span>{link.name}</span>
+        
+        <!-- Lamp Effect (Visible only when data-active="true") -->
+        <div class="lamp-effect absolute inset-0 w-full bg-brand/5 rounded-full -z-10 opacity-0 transition-opacity duration-300">
+          <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-brand rounded-t-full">
+            <div class="absolute w-12 h-6 bg-brand/20 rounded-full blur-md -top-2 -left-2"></div>
+            <div class="absolute w-8 h-6 bg-brand/20 rounded-full blur-md -top-1"></div>
+            <div class="absolute w-4 h-4 bg-brand/20 rounded-full blur-sm top-0 left-2"></div>
+          </div>
+        </div>
+      </a>
+    ))}
+
+  </div>
+
+  <!-- Right CTA Button -->
+  <div class="pointer-events-auto absolute right-6 top-0 h-full flex items-center">
+    <a 
+      href="#locate-us" 
+      class="group relative flex items-center gap-2 bg-white text-black font-bold px-6 py-2.5 rounded-full hover:bg-[#E9A127] hover:text-white transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(233,161,39,0.6)] overflow-hidden"
+    >
+      <!-- Pulse Effect -->
+      <span class="absolute inset-0 rounded-full border-2 border-white/50 opacity-0 group-hover:opacity-100 animate-ping"></span>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:rotate-12 transition-transform duration-300">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span class="relative z-10">Locate Us</span>
+    </a>
+  </div>
+</nav>
+
+<style>
+  /* Show lamp when active */
+  .nav-link[data-active="true"] .lamp-effect {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Mobile Navbar Scroll Effect
+  const mobileNav = document.getElementById('mobile-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        mobileNav?.classList.add('bg-black/80', 'backdrop-blur-md', 'shadow-lg');
+    } else {
+        mobileNav?.classList.remove('bg-black/80', 'backdrop-blur-md', 'shadow-lg');
+    }
+  });
+
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Handle click highlight
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.setAttribute('data-active', 'false'));
+      link.setAttribute('data-active', 'true');
+    });
+  });
+
+  // ScrollSpy
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        if (!id) return;
+        
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            // Remove active from all
+            navLinks.forEach(l => l.setAttribute('data-active', 'false'));
+            // Add active to current
+            link.setAttribute('data-active', 'true');
+          }
+        });
+      }
+    });
+  }, {
+    threshold: 0.5 // Trigger when 50% of section is visible
+  });
+
+  sections.forEach(section => observer.observe(section));
+  
+  // Set initial active
+  if (window.location.hash) {
+     const initialLink = document.querySelector(`.nav-link[href="${window.location.hash}"]`);
+     if (initialLink) initialLink.setAttribute('data-active', 'true');
+  } else {
+     // Default to Home (first link)
+     navLinks[0]?.setAttribute('data-active', 'true');
+  }
+</script>
